@@ -20,14 +20,16 @@
 	     =================================================================== -->
 	<div class="portfolio-container">
 		
-		<!-- 1. HEADER-BEREICH (Ohne Filter-Menü) -->
+		<!-- 1. HEADER-BEREICH -->
 		<header class="site-header">
 		    <div class="header-inner">
-		        <h1><span class="red-d">D</span>aniel Melichar</h1>
+		        <h1><a href="/index.html" style="text-decoration: none; color: inherit;">
+                <span class="red-d">D</span>aniel Melichar
+            </a></h1>
 
 		        <div class="header-controls">
 		            <div class="header-buttons">
-		                <button class="color-mode" id="toggle-sw">S/W Modus</button>
+		                <button class="color-mode" id="toggle-sw">MACHS BUNT</button>
 		                <!-- Buy-me-a-coffee Button im Header -->
 		                <a href="#" id="open-bmc-modal" class="header-bmc-btn" title="Buy me a coffee">
 		                    <img src="./img/icons/coffee.png" alt="Coffee" class="header-bmc-icon">
@@ -43,7 +45,7 @@
 			<!-- Linke Spalte: Sidebar mit Profilbild, Zitat & Navigation -->
 			<aside class="navigation-sidebar">
 			    <div class="profile-box">
-			        <img src="./img/me/anti.jpg" alt="Dan Me" class="profile-pic">
+			        <img src="./img/me/me.jpg" alt="Dan Me" class="profile-pic">
 			    </div>
 
 			    <!-- Zitat-Box -->
@@ -58,25 +60,25 @@
 			    <nav class="portfolio-nav">
 			        <ul>
 			            <li class="active">
-			                <a href="index.html">
+			                <a href="/index.html">
 			                    <img src="./img/icons/web-icon.png" alt="Projekte" class="nav-icon-img">
 			                    Projekte
 			                </a>
 			            </li>
 			            <li>
-			                <a href="about.html">
+			                <a href="/about.html">
 			                    <img src="./img/icons/web-icon.png" alt="Über mich" class="nav-icon-img">
 			                    Über mich
 			                </a>
 			            </li>
 			            <li>
-			                <a href="blog.html">
+			                <a href="/blog.html">
 			                    <img src="./img/icons/web-icon.png" alt="Blog" class="nav-icon-img">
 			                    Blog
 			                </a>
 			            </li>
 			            <li>
-			                <a href="kontakt.html">
+			                <a href="/kontakt.html">
 			                    <img src="./img/icons/web-icon.png" alt="Kontakt" class="nav-icon-img">
 			                    Kontakt
 			                </a>
@@ -88,9 +90,7 @@
 			<!-- Rechte Spalte: Content-Bereich -->
 			<main class="content-area">
 				
-			
-
-				<!-- NEU: Filter-Menü direkt über den Kacheln -->
+				<!-- Filter-Menü direkt über den Kacheln -->
 				<div class="content-filter-bar">
 					<ul class="filter-menu" id="filter-menu">
 						<li class="active" data-filter="all">Alle</li>
@@ -103,8 +103,8 @@
 				<!-- Kachel-Galerie -->
 				<div class="galerie-grid" id="galerie">
 					
-					<!-- Kachel 1 -->
-					<div class="galerie-item" data-category="web" data-url="about.html">
+					<!-- Kachel 1 (Lädt jetzt direkt den Blog-Beitrag) -->
+					<div class="galerie-item" data-category="web" data-url="/beispiele.html">
 						<div class="bild-wrapper">
 							<img src="./img/me/avatar_1.jpg" alt="Img" loading="lazy">
 						</div>
@@ -121,7 +121,7 @@
 					<!-- Kachel 2 -->
 					<div class="galerie-item" data-category="design" data-url="#">
 						<div class="bild-wrapper">
-							<img src="./img/me/cam.jpg" alt="Img" loading="lazy">
+							<img src="./img/fotografie/leipzig_tram.jpg" alt="Img" loading="lazy">
 						</div>
 						<div class="beschreibung">
 							<div class="titel-zeile">
@@ -136,7 +136,7 @@
 					<!-- Kachel 3 -->
 					<div class="galerie-item" data-category="musik" data-url="#">
 						<div class="bild-wrapper">
-							<img src="./img/me/anti.jpg" alt="Img" loading="lazy">
+							<img src="./img/fotografie/leipzig_skyline.jpg" alt="Img" loading="lazy">
 						</div>
 						<div class="beschreibung">
 							<div class="titel-zeile">
@@ -166,7 +166,7 @@
 					<!-- Kachel 5 -->
 					<div class="galerie-item" data-category="design" data-url="#">
 						<div class="bild-wrapper">
-							<img src="./img/draw/amy.jpg" alt="Img" loading="lazy">
+							<img src="./img/fotografie/green_nature.jpg" alt="Img" loading="lazy">
 						</div>
 						<div class="beschreibung">
 							<div class="titel-zeile">
@@ -192,10 +192,11 @@
 							<div class="item-meta"><span>28. Sep 2026</span><strong>Musik</strong></div>
 						</div>
 					</div>
-					<!-- Kachel 1 -->
-					<div class="galerie-item" data-category="web" data-url="#">
+
+											<!-- Kachel 1 (Lädt jetzt direkt den Blog-Beitrag) -->
+					<div class="galerie-item" data-category="web" data-url="/beispiele.html">
 						<div class="bild-wrapper">
-							<img src="./img/me/avatar_1.jpg" alt="Img" loading="lazy">
+							<img src="./img/fotografie/socken.jpg" alt="Img" loading="lazy">
 						</div>
 						<div class="beschreibung">
 							<div class="titel-zeile">
@@ -210,7 +211,7 @@
 					<!-- Kachel 2 -->
 					<div class="galerie-item" data-category="design" data-url="#">
 						<div class="bild-wrapper">
-							<img src="./img/me/cam.jpg" alt="Img" loading="lazy">
+							<img src="./img/fotografie/ruffy_focus.jpg" alt="Img" loading="lazy">
 						</div>
 						<div class="beschreibung">
 							<div class="titel-zeile">
@@ -225,7 +226,7 @@
 					<!-- Kachel 3 -->
 					<div class="galerie-item" data-category="musik" data-url="#">
 						<div class="bild-wrapper">
-							<img src="./img/me/anti.jpg" alt="Img" loading="lazy">
+							<img src="./img/fotografie/pencil.jpg" alt="Img" loading="lazy">
 						</div>
 						<div class="beschreibung">
 							<div class="titel-zeile">
@@ -255,7 +256,7 @@
 					<!-- Kachel 5 -->
 					<div class="galerie-item" data-category="design" data-url="#">
 						<div class="bild-wrapper">
-							<img src="./img/draw/amy.jpg" alt="Img" loading="lazy">
+							<img src="./img/fotografie/green_nature.jpg" alt="Img" loading="lazy">
 						</div>
 						<div class="beschreibung">
 							<div class="titel-zeile">
@@ -281,97 +282,6 @@
 							<div class="item-meta"><span>28. Sep 2026</span><strong>Musik</strong></div>
 						</div>
 					</div>
-
-					<!-- Kachel 1 -->
-					<div class="galerie-item" data-category="web" data-url="#">
-						<div class="bild-wrapper">
-							<img src="./img/me/avatar_1.jpg" alt="Img" loading="lazy">
-						</div>
-						<div class="beschreibung">
-							<div class="titel-zeile">
-								<img class="icon" src="./img/icons/web-icon.png" alt="Icon">
-								<h3>Minimalistisches Webdesign</h3>
-							</div>
-							<p>Ein Blick hinter die Kulissen der Entwicklung meines Portfolios. Leichtgewichtiger Code ohne schwere Frameworks.</p>
-							<div class="item-meta"><span>15. Okt 2026</span><strong>Webdesign</strong></div>
-						</div>
-					</div>
-
-					<!-- Kachel 2 -->
-					<div class="galerie-item" data-category="design" data-url="#">
-						<div class="bild-wrapper">
-							<img src="./img/me/cam.jpg" alt="Img" loading="lazy">
-						</div>
-						<div class="beschreibung">
-							<div class="titel-zeile">
-								<img class="icon" src="./img/icons/web-icon.png" alt="Icon">
-								<h3>S/W-Fotografie</h3>
-							</div>
-							<p>Warum der Verzicht auf Farbe oft viel mehr Emotionen transportiert ...</p>
-							<div class="item-meta"><span>23. Okt 2026</span><strong>Fotografie</strong></div>
-						</div>
-					</div>
-
-					<!-- Kachel 3 -->
-					<div class="galerie-item" data-category="musik" data-url="#">
-						<div class="bild-wrapper">
-							<img src="./img/me/anti.jpg" alt="Img" loading="lazy">
-						</div>
-						<div class="beschreibung">
-							<div class="titel-zeile">
-								<img class="icon" src="./img/icons/web-icon.png" alt="Icon">
-								<h3>Kreative Prozesse</h3>
-							</div>
-							<p>Von der ersten Idee im Kopf bis zum fertigen Track. Wie visuelle Kunst und Akustik verschmelzen.</p>
-							<div class="item-meta"><span>02. Okt 2026</span><strong>Musik</strong></div>
-						</div>
-					</div>
-
-					<!-- Kachel 4 -->
-					<div class="galerie-item" data-category="web" data-url="#">
-						<div class="bild-wrapper">
-							<img src="./img/draw/breaking.jpg" alt="Img" loading="lazy">
-						</div>
-						<div class="beschreibung">
-							<div class="titel-zeile">
-								<img class="icon" src="./img/icons/web-icon.png" alt="Icon">
-								<h3>Responsive Typografie</h3>
-							</div>
-							<p>Wie man Schriften im Brutalismus so formatiert, dass sie auf Monitoren laut wirken, ohne das Layout zu sprengen.</p>
-							<div class="item-meta"><span>10. Okt 2026</span><strong>Webdesign</strong></div>
-						</div>
-					</div>
-
-					<!-- Kachel 5 -->
-					<div class="galerie-item" data-category="design" data-url="#">
-						<div class="bild-wrapper">
-							<img src="./img/draw/amy.jpg" alt="Img" loading="lazy">
-						</div>
-						<div class="beschreibung">
-							<div class="titel-zeile">
-								<img class="icon" src="./img/icons/web-icon.png" alt="Icon">
-								<h3>Analoge Kameras</h3>
-							</div>
-							<p>Ein Plädoyer für Entschleunigung. Warum die Beschränkung auf 24 Bilder die eigene Aufmerksamkeit schärft.</p>
-							<div class="item-meta"><span>05. Okt 2026</span><strong>Fotografie</strong></div>
-						</div>
-					</div>
-
-					<!-- Kachel 6 -->
-					<div class="galerie-item" data-category="musik" data-url="#">
-						<div class="bild-wrapper">
-							<img src="./img/privat/omi.jpg" alt="Img" loading="lazy">
-						</div>
-						<div class="beschreibung">
-							<div class="titel-zeile">
-								<img class="icon" src="./img/icons/web-icon.png" alt="Icon">
-								<h3>Modulare Synthesizer</h3>
-							</div>
-							<p>Ein Einstieg in das Kabel-Chaos. Warum das manuelle Patchen von Oszillatoren eine magische Eigendynamik entwickelt.</p>
-							<div class="item-meta"><span>28. Sep 2026</span><strong>Musik</strong></div>
-						</div>
-					</div>
-
 
 				</div> <!-- Ende .galerie-grid -->
 			</main>
@@ -419,9 +329,6 @@
 	<!-- ===============================================================
 	     SCRIPTS (Isotope & Filter & SPA-Navigation & Modal Logik)
 	     =============================================================== -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
-
-<!-- SCRIPTS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
 	<script>
 		window.addEventListener('DOMContentLoaded', () => {
@@ -494,7 +401,7 @@
 			if (colorButton) {
 				colorButton.addEventListener('click', () => {
 					document.body.classList.toggle('color-on');
-					colorButton.textContent = document.body.classList.contains('color-on') ? "S/W MODUS" : "BITTE IN FARBE";
+					colorButton.textContent = document.body.classList.contains('color-on') ? "S/W MODUS" : "MACHS BUNT";
 				});
 			}
 
@@ -547,7 +454,7 @@
 			initBmcModal();
 
 			// -------------------------------------------------------------
-			// 4. SPA-NAVIGATION MIT LANGSAMER EİNBLENDUNG (FADE-OUT / FADE-IN)
+			// 4. SPA-NAVIGATION MIT BLOG-PREFIX ERKENNUNG
 			// -------------------------------------------------------------
 			async function loadPage(url) {
 				try {
@@ -571,7 +478,14 @@
 							
 							// Navigation-Active-State anpassen
 							document.querySelectorAll('.portfolio-nav li').forEach(li => li.classList.remove('active'));
-							const currentLink = document.querySelector(`.portfolio-nav a[href="${url}"]`);
+							
+							// Wenn es eine Blog-Seite ist (beginnt mit "blog/"), aktiviere "blog.html" in der Navi
+							let navTarget = url;
+							if (url.startsWith('blog/')) {
+								navTarget = 'blog.html';
+							}
+
+							const currentLink = document.querySelector(`.portfolio-nav a[href="${navTarget}"]`);
 							if (currentLink) {
 								currentLink.closest('li').classList.add('active');
 							}

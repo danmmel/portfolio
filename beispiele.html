@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Daniel Melichar - Styleguide & Bausteine</title>
+	
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="style.css">
+	
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<!-- ===================================================================
+	     HAUPTCONTAINER
+	     =================================================================== -->
+	<div class="portfolio-container">
+		
+		<!-- 1. HEADER-BEREICH -->
+		<header class="site-header">
+		    <div class="header-inner">
+		        <h1>
+		            <a href="/index.html" style="text-decoration: none; color: inherit;">
+		                <span class="red-d">D</span>aniel Melichar
+		            </a>
+		        </h1>
+
+		        <div class="header-controls">
+		            <div class="header-buttons">
+		                <button class="color-mode" id="toggle-sw">BITTE IN FARBE</button>
+		                <a href="#" id="open-bmc-modal" class="header-bmc-btn" title="Buy me a coffee">
+		                    <img src="./img/icons/coffee.png" alt="Coffee" class="header-bmc-icon">
+		                </a>
+		            </div>
+		        </div>
+		    </div>
+		</header>
+
+		<!-- 2. HAUPTLAYOUT -->
+		<div class="main-layout">
+			
+			<!-- Linke Spalte: Sidebar -->
+			<aside class="navigation-sidebar">
+			    <div class="profile-box">
+			        <img src="./img/me/me.jpg" alt="Dan Me" class="profile-pic">
+			    </div>
+
+			    <div class="sidebar-quote-box">
+			        <p class="brutalist-quote">
+			            REVOLUTION IST GROSSARTIG, ALLES ANDERE IST QUARK! 
+			            <small>- ROSA LUXEMBURG</small>
+			        </p>
+			    </div>
+
+			    <nav class="portfolio-nav">
+			        <ul>
+			            <li>
+			                <a href="/index.html">
+			                    <img src="./img/icons/web-icon.png" alt="Projekte" class="nav-icon-img">
+			                    Projekte
+			                </a>
+			            </li>
+			            <li>
+			                <a href="/about.html">
+			                    <img src="./img/icons/web-icon.png" alt="Über mich" class="nav-icon-img">
+			                    Über mich
+			                </a>
+			            </li>
+			            <li>
+			                <a href="/blog.html">
+			                    <img src="./img/icons/web-icon.png" alt="Blog" class="nav-icon-img">
+			                    Blog
+			                </a>
+			            </li>
+			            <li>
+			                <a href="/kontakt.html">
+			                    <img src="./img/icons/web-icon.png" alt="Kontakt" class="nav-icon-img">
+			                    Kontakt
+			                </a>
+			            </li>
+			        </ul>
+			    </nav>
+			</aside>
+			
+			<!-- Rechte Spalte: Inhaltsbereich mit allen Bausteinen -->
+			<main class="content-area">
+				
+				<!-- A. Intro-Box -->
+				<section class="content-intro">
+					<h2 class="intro-title">STYLEGUIDE // WIEDERVERWENDBARE ELEMENTE</h2>
+				
+				</section>
+
+				<!-- B. Hauptüberschriften & Fließtext -->
+				<div class="info-box">
+					<h2 class="section-title">01. TYPOGRAFIE & TEXT-FORMATIERUNG</h2>
+					<p class="box-text">
+						Standard-Fließtext lässt sich flexibel durch <span class="text-bold">fett gedruckte Begriffe</span>, farbige <span class="text-accent">Akzente in Rot</span> oder kleine Status-Markierungen wie <span class="text-badge">AKTIV</span> oder <span class="text-badge">DRAFT</span> hervorheben.
+					</p>
+
+					<h3 class="sub-title">ZWEISETZENDE ZWISCHENÜBERSCHRIFT</h3>
+					<p class="box-text">
+						Perfekt für Unterabschnitte innerhalb von Blog-Artikeln oder Projekt-Beschreibungen.
+					</p>
+				</div>
+
+				<!-- C. Zitat-Box (Brutalist Quote) -->
+				<blockquote class="content-quote">
+					<p>„SIMPLICITY IS ABOUT SUBTRACTING THE OBVIOUS AND ADDING THE MEANINGFUL.“</p>
+					<cite>— JOHN MAEDA</cite>
+				</blockquote>
+
+				<!-- D. Strukturierte Aufzählungsliste -->
+				<div class="info-box">
+					<h3 class="sub-title">02. BRUTALISTISCHE AUFZÄHLUNG</h3>
+					<ul class="brutalist-list">
+						<li>Frontend-Architecture ohne schwerfällige JavaScript-Frameworks</li>
+						<li>Barrierefreie Typografie & kompromisslose Performance</li>
+						<li>Saubere SPA-Navigation via Fetch-API mit History-PushState</li>
+						<li>Dynamischer Farbmodus-Toggle mit automatischen Icon-Anpassungen</li>
+					</ul>
+				</div>
+
+				<!-- E. Content-Box (z.B. für "Über mich" oder Info-Blöcke) -->
+				<div class="about-content-box">
+					<h3 class="sub-title" style="margin-top: 0;">03. STANDARD-CONTENT-CONTAINER</h3>
+					<p class="box-text"">
+						Dieser weiße Rahmen entspricht dem Layout deiner „Über Mich“-Ansicht. Durch die saubere Trennung in der CSS greift auch hier automatisch der korrekte Abstand zwischen den Boxen.
+					</p>
+				</div>
+
+			</main>
+
+		</div>
+
+	</div>
+
+	<!-- ===============================================================
+	     FOOTER-BEREICH
+	     =============================================================== -->
+	<footer class="site-footer">
+		<div class="footer-inner">
+			<div class="footer-left" style="display: flex; gap: 8px; align-items: center;">
+				<a href="#" class="coffee-icon-btn" title="Coffee"><img src="./img/icons/coffee.png" alt="Coffee" class="coffee-img-icon"></a>
+				<a href="#" class="coffee-icon-btn" title="Toast"><img src="./img/icons/toast.png" alt="Toast" class="coffee-img-icon"></a>
+				<a href="#" class="coffee-icon-btn" title="Pizza"><img src="./img/icons/pizza.png" alt="Pizza" class="coffee-img-icon"></a>
+				<a href="#" class="coffee-icon-btn" title="Pommes"><img src="./img/icons/pommes.png" alt="Pommes" class="coffee-img-icon"></a>
+			</div>
+	
+			<p class="quote">„Simplicity is about subtracting the obvious and adding the meaningful.“ — John Maeda</p>
+			
+			<div class="footer-bottom">
+				<p class="copyright">&copy; 2026 Daniel Melichar</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- MODAL POPUP -->
+	<div id="bmc-modal-overlay" class="bmc-modal-overlay" aria-hidden="true">
+	    <div class="bmc-modal">
+	        <button type="button" id="close-bmc-modal" class="bmc-modal-close" aria-label="Schließen">&times;</button>
+	        <h2 class="bmc-modal-title">Buy me a coffee</h2>
+	        <div class="bmc-modal-content">
+		        <p>Hier entsteht in Kürze dein Inhalt...</p>
+	        </div>
+	    </div>
+	</div>
+
+	<!-- SCRIPTS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
+	<script>
+		window.addEventListener('DOMContentLoaded', () => {
+			// S/W / Farb-Button
+			const colorButton = document.querySelector('.color-mode');
+			if (colorButton) {
+				colorButton.addEventListener('click', () => {
+					document.body.classList.toggle('color-on');
+					colorButton.textContent = document.body.classList.contains('color-on') ? "S/W MODUS" : "BITTE IN FARBE";
+				});
+			}
+
+			// Modal Logik
+			function initBmcModal() {
+				const bmcModalOverlay = document.getElementById('bmc-modal-overlay');
+				const openBmcBtn = document.getElementById('open-bmc-modal');
+				const closeBmcBtn = document.getElementById('close-bmc-modal');
+
+				if (openBmcBtn && bmcModalOverlay) {
+					openBmcBtn.addEventListener('click', (e) => {
+						e.preventDefault();
+						bmcModalOverlay.classList.add('active');
+						bmcModalOverlay.setAttribute('aria-hidden', 'false');
+					});
+
+					if (closeBmcBtn) {
+						closeBmcBtn.addEventListener('click', () => {
+							bmcModalOverlay.classList.remove('active');
+							bmcModalOverlay.setAttribute('aria-hidden', 'true');
+						});
+					}
+				}
+			}
+			initBmcModal();
+		});
+	</script>
+</body>
+</html>

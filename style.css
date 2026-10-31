@@ -267,7 +267,7 @@ body.color-on .color-mode {
 
 .content-intro {
     background: #dcd9d9;
-    padding: 12px 24px 18px 24px;
+    padding: 12px 0px 6px 24px;
     box-sizing: border-box;
     border-radius: 5px;
 }
@@ -356,7 +356,7 @@ body.color-on .color-mode {
 }
 
 .galerie-item:hover {
-    background-color: #ff0000 !important; 
+    background-color: #FFFFFF !important; 
     border-color: #000000 !important;     
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
 }
@@ -364,11 +364,11 @@ body.color-on .color-mode {
 .galerie-item:hover .beschreibung h3,
 .galerie-item:hover .beschreibung p,
 .galerie-item:hover .item-meta {
-    color: #ffffff !important; 
+    color: #000000 !important; 
 }
 
 .galerie-item:hover .item-meta {
-    border-top-color: #ffffff !important;
+    border-top-color: #000000 !important;
 }
 
 .bild-wrapper {
@@ -457,7 +457,15 @@ body.color-on .icon {
     padding-top: 5px;
     border-top: 1px dotted #000000;
 }
+/* Im Farbmodus das Icon der Kachel schwarz machen */
+body.color-on .galerie-item .icon {
+    filter: brightness(0) !important;
+}
 
+/* Wenn man mit der Maus über die Kachel hovert (im Farbmodus bleibt das Icon beim Hover weiß, damit man es auf dem roten Hintergrund gut sieht) */
+body.color-on .galerie-item:hover .icon {
+    filter: brightness(0) invert(1) !important;
+}
 /* --------------------------------------------------------------------------
    5. FOOTER-BEREICH
    -------------------------------------------------------------------------- */
@@ -722,4 +730,188 @@ body.color-on .icon {
 
 .content-area.fade-out {
     opacity: 0;
+}
+
+/* =================================================
+   ABSTAND ZWISCHEN DEN CONTENT-ELEMENTEN (MOBIL & DESKTOP)
+   ================================================= */
+
+/* 1. Für große Bildschirme: Abstand zwischen aufeinanderfolgenden Elementen */
+.about-content-box + .content-box,
+section + section,
+article + article,
+div + .content-box {
+  margin-top: 50px;
+}
+
+/* 2. Für kleine Bildschirme (Handy): Falls der Abstand hier abweichen soll */
+@media (max-width: 768px) {
+  .about-content-box + .content-box, /* Korrigiert zu "about" */
+  section + section,
+  article + article,
+  div + .content-box {
+    margin-top: 30px;
+  }
+}
+
+/* ==========================================================================
+   ABSTAND ZWISCHEN INTRO & INHALTSBOXEN (DESKTOP & MOBIL)
+   ========================================================================== */
+
+/* 1. Direkter Abstand zwischen der grauen Intro-Box und der nachfolgenden Box */
+.content-intro + .about-content-box,
+.content-intro + div,
+.about-content-box + .content-box,
+section + section,
+article + article,
+div + .content-box {
+  margin-top: 20px; /* Hier gewünschten Abstand eintragen (z.B. 20px oder 30px) */
+}
+
+/* 2. Für schmale/mobile Ansichten */
+@media (max-width: 900px) {
+  .content-intro + .about-content-box,
+  .content-intro + div,
+  .about-content-box + .content-box,
+  section + section,
+  article + article,
+  div + .content-box {
+    margin-top: 16px; /* Spezieller Abstand auf dem Smartphone */
+  }
+}
+
+.galerie-item {
+    pointer-events: auto !important;
+}
+
+
+
+/* ==========================================================================
+   WIEDERVERWENDBARE ELEMENTE (TYPOGRAFIE & BBOXEN)
+   ========================================================================== */
+
+/* 1. Haupt- und Zwischenüberschriften */
+.section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #b5aeae;
+    padding-bottom: 6px;
+    color: #000000;
+}
+
+/* Zwischenüberschrift */
+.sub-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+/* Standard-Fließtext ohne Inline-Styles */
+.box-text {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: #444444;
+    margin-bottom: 12px;
+}
+
+.text-bold {
+    font-weight: 700;
+    color: #000000;
+}
+
+.text-accent {
+    font-weight: 700;
+    color: #ff0000;
+}
+
+.text-badge {
+    display: inline-block;
+    background: #000000;
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+}
+
+/* 3. Wiederverwendbare Zitat-Box (Brutalist Quote) */
+.content-quote {
+    background: #ffffff;
+    border-left: 4px solid #ff0000;
+    border-top: 1px solid #b5aeae;
+    border-right: 1px solid #b5aeae;
+    border-bottom: 1px solid #b5aeae;
+    padding: 12px 16px;
+    margin: 15px 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.content-quote p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0;
+}
+
+.content-quote cite {
+    display: block;
+    font-style: normal;
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #666666;
+    margin-top: 6px;
+}
+
+/* 4. Brutalistisches Info- / Content-Segment */
+.info-box {
+    background: #ffffff;
+    border: 1px solid #b5aeae;
+    border-radius: 5px;
+    padding: 16px;
+    margin-bottom: 15px;
+}
+
+/* 5. Aufzählungsliste im Brutalismus-Stil */
+.brutalist-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.brutalist-list li {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    padding: 6px 0;
+    border-bottom: 1px dotted #dcd9d9;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #444444;
+}
+
+.brutalist-list li::before {
+    content: "■";
+    color: #ff0000;
+    font-size: 0.6rem;
+}
+
+.about-content-box {
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #b5aeae;
+    border-radius: 5px;
 }
