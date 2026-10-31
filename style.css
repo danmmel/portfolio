@@ -1,0 +1,725 @@
+/* ==========================================================================
+   STYLE.CSS - Sticky Sidebar & Kompakte Filter-Leiste
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: thin;
+    scrollbar-color: #b5aeae #fafafa;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body {
+    background-color: #fafafa;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 110px; /* Platz für den fixierten Header */
+}
+
+.red-d {
+    color: #ff0000;
+}
+
+/* --------------------------------------------------------------------------
+   1. HEADER-BEREICH (OBEN FIXIERT)
+   -------------------------------------------------------------------------- */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fafafa;
+    border-bottom: 1px solid #dad6d6;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    padding: 10px 0 15px 0;
+}
+
+.header-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 15px 0 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.site-header h1 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.color-mode {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    padding: 6px 12px;
+    border: 1px solid #000000;
+    cursor: pointer;
+    user-select: none;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+    background: linear-gradient(135deg, #ff0055, #ff5000, #ffcc00, #00e5ff);
+    background-size: 200% 200%;
+    color: #ffffff;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.6);
+    animation: rainbowGradient 4s ease infinite;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.color-mode:hover {
+    opacity: 0.9;
+}
+
+body.color-on .color-mode {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border-color: #000000;
+    text-shadow: none;
+    animation: none;
+}
+
+@keyframes rainbowGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.header-bmc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    border: 1px solid #000000;
+    background: #ffffff;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.header-bmc-btn:hover {
+    background: #000000;
+}
+
+.header-bmc-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
+}
+
+.header-bmc-btn:hover .header-bmc-icon {
+    filter: invert(1);
+}
+
+/* --------------------------------------------------------------------------
+   2. HAUPTLAYOUT & FIXIERTE SIDEBAR
+   -------------------------------------------------------------------------- */
+.portfolio-container {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding-top: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.main-layout {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 7px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 30px;
+    align-items: start;
+    flex-grow: 1;
+    background-color: #fafafa;
+    box-sizing: border-box;
+}
+
+.navigation-sidebar {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 20px;
+    width: 200px;
+    align-self: start;
+    z-index: 10;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid #b5aeae;
+    border-radius: 5px !important; 
+    background-color: #ffffff;
+    display: block;
+}
+
+.portfolio-nav {
+    width: 100%;
+}
+
+.portfolio-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.portfolio-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 100%;
+    padding: 6px 12px;
+    border: 1px solid #000000;
+    background: #ffffff;
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 4px;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.nav-icon-img {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: invert(18%) saturate(7500%) hue-rotate(357deg) brightness(100%) contrast(118%);
+    transition: filter 0.2s ease;
+}
+
+.portfolio-nav a:hover {
+    background: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+.portfolio-nav a:hover .nav-icon-img {
+    filter: invert(18%) saturate(7500%) hue-rotate(357deg) brightness(100%) contrast(118%) !important;
+}
+
+.portfolio-nav li.active a {
+    background: #ff0000 !important;
+    color: #000000 !important;
+    border-color: #ff0000 !important;
+}
+
+.portfolio-nav li.active .nav-icon-img {
+    filter: brightness(0) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. INHALTS-BEREICH, INTRO & FILTER-LEISTE
+   -------------------------------------------------------------------------- */
+.content-area {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Kompakterer Abstand gegen riesige Lücken */
+    overflow: hidden;
+    width: 770px;
+}
+
+.content-intro {
+    background: #dcd9d9;
+    padding: 12px 24px 18px 24px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.intro-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0;
+    margin-bottom: 6px;
+    color: #000000;
+}
+
+.intro-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: #444444;
+    margin-bottom: 0;
+}
+
+/* Filter-Leiste im Content-Bereich */
+.content-filter-bar {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.filter-menu {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    margin: 0;
+    padding: 0;
+}
+
+.filter-menu li {
+    cursor: pointer;
+    user-select: none;
+    padding: 6px 12px;
+    border: 1px solid #000000;
+    background: #ffffff; 
+    border-radius: 4px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.filter-menu li:hover {
+    background: #e5e5e5;
+}
+
+.filter-menu li.active {
+    background: #000000 !important;
+    color: #ffffff !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. KACHEL-GALERIE & HOVER
+   -------------------------------------------------------------------------- */
+.galerie-grid {
+    display: block;
+    margin-left: -5px;  
+    margin-right: -5px; 
+    min-height: 350px; 
+    overflow: hidden;
+}
+
+.galerie-item {
+    float: left; 
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #b5aeae;
+    padding: 8px;
+    background: #ffffff; 
+    width: 180px; 
+    height: 315px; 
+    margin: 5px; 
+    overflow: hidden;
+    border-radius: 5px; 
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.galerie-item:hover {
+    background-color: #ff0000 !important; 
+    border-color: #000000 !important;     
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+}
+
+.galerie-item:hover .beschreibung h3,
+.galerie-item:hover .beschreibung p,
+.galerie-item:hover .item-meta {
+    color: #ffffff !important; 
+}
+
+.galerie-item:hover .item-meta {
+    border-top-color: #ffffff !important;
+}
+
+.bild-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid #b5aeae; 
+    margin-bottom: 8px;
+    border-radius: 5px;
+}
+
+.bild-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.galerie-item:hover .bild-wrapper img,
+body.color-on .bild-wrapper img {
+    filter: grayscale(0%);
+}
+
+.titel-zeile {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+    width: 100%;
+}
+
+.icon {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-top: 1px;
+    filter: invert(18%) saturate(7500%) hue-rotate(357deg) brightness(100%) contrast(118%) !important;
+}
+
+.galerie-item:hover .icon {
+    filter: brightness(0) invert(1) !important;
+}
+
+body.color-on .icon {
+    filter: brightness(0);
+}
+
+.beschreibung {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.beschreibung h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    text-align: left;
+    padding-right: 4px;
+    transition: color 0.2s ease;
+}
+
+.beschreibung p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem;
+    line-height: 1.35;
+    color: #444444;
+    margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+.item-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.62rem;
+    color: #666666;
+    text-transform: uppercase;
+    margin-top: auto; 
+    padding-top: 5px;
+    border-top: 1px dotted #000000;
+}
+
+/* --------------------------------------------------------------------------
+   5. FOOTER-BEREICH
+   -------------------------------------------------------------------------- */
+.site-footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+    background-color: #fafafa;
+    border-top: 1px solid #bcb9b9;
+    padding: 10px 0;
+    width: 100%;
+    margin-top: auto;
+    flex-shrink: 0;
+}
+
+.footer-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 7px;
+    width: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    grid-column: 1;
+}
+
+.coffee-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 2px;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.coffee-icon-btn:hover {
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+
+.coffee-img-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 0.75rem;
+    margin-bottom: 0;
+    text-align: center;
+    grid-column: 2;
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    font-size: 0.7rem;
+    grid-column: 3;
+}
+
+.copyright {
+    font-size: 0.7rem;
+    color: #666666;
+}
+
+/* --------------------------------------------------------------------------
+   6. ZITAT-BOX & SCROLLBALKEN
+   -------------------------------------------------------------------------- */
+.sidebar-quote-box {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    padding-left: 6px;
+    box-sizing: border-box;
+}
+
+.brutalist-quote {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.62rem;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.brutalist-quote small {
+    display: block;
+    font-size: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    margin-top: 5px;
+    color: #000000;
+    opacity: 0.8;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fafafa;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #b5aeae;
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+}
+
+/* --------------------------------------------------------------------------
+   7. BUY ME A COFFEE MODAL (Fly-In Overlay)
+   -------------------------------------------------------------------------- */
+.bmc-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.bmc-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.bmc-modal {
+    background: #ffffff;
+    border: 2px solid #000000;
+    width: 100%;
+    max-width: 420px;
+    padding: 24px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    transform: translateY(-30px);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    opacity: 0;
+}
+
+.bmc-modal-overlay.active .bmc-modal {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.bmc-modal-close {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1;
+    cursor: pointer;
+    color: #000000;
+    transition: color 0.2s ease;
+}
+
+.bmc-modal-close:hover {
+    color: #ff0000;
+}
+
+.bmc-modal-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #bcb9b9;
+    padding-bottom: 8px;
+}
+
+.bmc-modal-content {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #444444;
+    line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   8. RESPONSIVE DESIGN
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+    .portfolio-container {
+        min-height: auto !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    .main-layout {
+        display: block !important;
+        margin-top: 20px !important;
+        width: 100% !important;
+    }
+
+    .navigation-sidebar {
+        position: relative !important;
+        top: auto !important;
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+
+    .content-area {
+        width: 100% !important;
+        overflow: visible !important; 
+        display: block !important;
+    }
+
+    .galerie-grid {
+        display: block !important;
+        margin: 0 auto !important;
+        width: 380px !important;
+        max-width: 100% !important;
+    }
+
+    .galerie-item {
+        float: left !important;
+        width: 180px !important;
+        height: 315px !important;
+        margin: 5px !important;
+    }
+
+    .site-footer {
+        position: relative !important;
+        bottom: auto !important;
+        margin-top: 40px !important;
+        width: 100% !important;
+    }
+}
+
+/* Definiert die sanfte Einblendung für den Inhaltsbereich */
+.content-area {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.content-area.fade-out {
+    opacity: 0;
+}
